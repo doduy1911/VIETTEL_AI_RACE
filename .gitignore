@@ -1,0 +1,34 @@
+# ==============================================================================
+# PYTHON CACHE & COMPILED FILES
+# ==============================================================================
+# Loại bỏ thư mục __pycache__ ở mọi cấp độ
+__pycache__/
+
+# Loại bỏ các file bytecode đã biên dịch
+*.pyc
+*.pyo
+*.pyd
+
+# Loại bỏ file log hoặc cache của Python dạng phân khối (Shared Objects)
+*.so
+
+# ==============================================================================
+# DEVELOPMENT TOOLS CACHE (Tùy chọn nhưng nên có)
+# ==============================================================================
+# Cache của các công cụ kiểm tra code (Ruff, MyPy, Pytest)
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ==============================================================================
+# VIRTUAL ENVIRONMENTS (Môi trường ảo - Nên bỏ qua để tránh nặng Git)
+# ==============================================================================
+venv/
+.venv/
+env/
+.env/
+.env
+**/models/**
+/models/

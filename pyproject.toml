@@ -1,0 +1,11 @@
+[project]
+name = "viettel-ai-race"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "hf-transfer>=0.1.9",
+    "huggingface-hub>=1.22.0",
+    "pydantic-settings>=2.14.2",
+]
