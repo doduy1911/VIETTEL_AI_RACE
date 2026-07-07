@@ -8,6 +8,7 @@ class Settings(BaseSettings):
         token_hf:str
         host: str = "0.0.0.0"
         port: int = 8000
+        served_model_name:str
         gpu_memory_utilization: float = 0.85
         max_model_len: int | None = None          # để trống = dùng giá trị mặc định của model
         tensor_parallel_size: int = 1
