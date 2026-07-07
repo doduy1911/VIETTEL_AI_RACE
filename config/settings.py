@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 class Settings(BaseSettings):
         hf_repo_id: str
         local_dir: str
-        token:str
+        token_hf:str
         host: str = "0.0.0.0"
         port: int = 8000
         gpu_memory_utilization: float = 0.85
