@@ -29,15 +29,17 @@ def build_command() -> list[str]:
  
     return cmd
  
-def main() :
+def main():
     if not os.path.isdir(settings.local_dir) or not os.listdir(settings.local_dir):
         print(f"Không tìm thấy model tại '{settings.local_dir}'. Chạy download_model.py trước.")
         sys.exit(1)
- 
+
     cmd = build_command()
     print("Đang khởi động vLLM server với lệnh:")
     print(" ".join(cmd))
     print()
+
+    os.execvp(cmd[0], cmd)  
 
 if __name__ == "__main__":
     main()

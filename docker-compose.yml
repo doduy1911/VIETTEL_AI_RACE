@@ -1,6 +1,6 @@
 services:
   model:
-    image: duydo1911/viettel-ai-race:v1
+    image: duydo1911/viettel-ai-race:v2
     ports:
       - "8000:8000"
     shm_size: "2g"
