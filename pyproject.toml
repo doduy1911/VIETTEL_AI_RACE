@@ -10,3 +10,6 @@ dependencies = [
     "pydantic-settings>=2.14.2",
     "vllm>=0.24.0",
 ]
+[project.scripts]
+VLLM = "VLLM.main:main"
+

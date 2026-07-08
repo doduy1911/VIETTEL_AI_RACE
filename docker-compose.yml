@@ -1,0 +1,13 @@
+services:
+  model:
+    image: duydo1911/viettel-ai-race:v1
+    ports:
+      - "8000:8000"
+    shm_size: "2g"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

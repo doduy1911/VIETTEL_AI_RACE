@@ -29,8 +29,7 @@ def build_command() -> list[str]:
  
     return cmd
  
- 
-if __name__ == "__main__":
+def main() :
     if not os.path.isdir(settings.local_dir) or not os.listdir(settings.local_dir):
         print(f"Không tìm thấy model tại '{settings.local_dir}'. Chạy download_model.py trước.")
         sys.exit(1)
@@ -39,6 +38,6 @@ if __name__ == "__main__":
     print("Đang khởi động vLLM server với lệnh:")
     print(" ".join(cmd))
     print()
- 
-    # Chạy trực tiếp, log in ra màn hình luôn (Ctrl+C để dừng)
-    subprocess.run(cmd)
+
+if __name__ == "__main__":
+    main()
