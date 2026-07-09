@@ -29,7 +29,8 @@ def build_command() -> list[str]:
 
     return cmd
 
-def main() :
+ 
+def main():
     if not os.path.isdir(settings.local_dir) or not os.listdir(settings.local_dir):
         print(f"Không tìm thấy model tại '{settings.local_dir}'. Chạy downloads_models.py trước.")
         sys.exit(1)
@@ -40,6 +41,8 @@ def main() :
     print()
 
     subprocess.run(cmd)
+    os.execvp(cmd[0], cmd)  
+
 
 if __name__ == "__main__":
     main()
