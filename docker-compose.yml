@@ -1,9 +1,18 @@
 services:
   model:
-    image: duydo1911/viettel-ai-race:v1
+    image: duydo1911/viettel_ai_rate1
     ports:
       - "8000:8000"
     shm_size: "2g"
+    environment:
+      - SERVED_MODEL_NAME=Qwen3.5-2B
+      - HOST=0.0.0.0
+      - PORT=8000
+      - GPU_MEMORY_UTILIZATION=0.95
+      - MAX_MODEL_LEN=262144
+      - TENSOR_PARALLEL_SIZE=1
+      - ENABLE_PREFIX_CACHING=true
+      - ENABLE_CHUNKED_PREFILL=false
     deploy:
       resources:
         reservations:

@@ -11,7 +11,7 @@ def build_command() -> list[str]:
         f"--gpu-memory-utilization={settings.gpu_memory_utilization}",
         f"--tensor-parallel-size={settings.tensor_parallel_size}",
     ]
- 
+
     if settings.enable_prefix_caching:
         cmd.append("--enable-prefix-caching")
     if settings.enable_chunked_prefill:
@@ -26,18 +26,20 @@ def build_command() -> list[str]:
         cmd.append(f"--max-num-seqs={settings.max_num_seqs}")
     if settings.extra_flags.strip():
         cmd.extend(settings.extra_flags.strip().split())
- 
+
     return cmd
- 
+
 def main() :
     if not os.path.isdir(settings.local_dir) or not os.listdir(settings.local_dir):
-        print(f"Không tìm thấy model tại '{settings.local_dir}'. Chạy download_model.py trước.")
+        print(f"Không tìm thấy model tại '{settings.local_dir}'. Chạy downloads_models.py trước.")
         sys.exit(1)
- 
+
     cmd = build_command()
     print("Đang khởi động vLLM server với lệnh:")
     print(" ".join(cmd))
     print()
+
+    subprocess.run(cmd)
 
 if __name__ == "__main__":
     main()
